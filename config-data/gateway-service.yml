@@ -1,0 +1,47 @@
+
+server:
+  port: 8005 
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+       default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  
+management:
+  endpoints:
+    web:
+      exposure:
+         include: "*"   
+
+ribbon:
+  eureka:
+    enabled: false
+        
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/product/**    
+       
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/order/**
+            
+        - id: inventory-service
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory/**
+       
+         
+                
+  
+  
