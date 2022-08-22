@@ -1,33 +1,33 @@
 version: '3.8'
 services:
-  eureka-server:
-    image: eureka #nombre de la imagen que hemos creado
+  registry-service:
+    image: hugojesusmr/registry-service:1.0 #nombre de la imagen que hemos creado
     restart: always
-    container_name: eureka
+    container_name: registry-service
     ports:
       - '8761:8761'
     networks:
       - 'dockermicroservices-network'
   product-service:
-    image: product-service #nombre de la imagen que hemos creado
+    image: hugojesusmr/product-service:1.0 #nombre de la imagen que hemos creado
     restart: always
-    container_name: product-service:1.0
+    container_name: product-service
     ports:
       - '8002:8002'
     networks:
       - 'dockermicroservices-network'
   customer-service:
-    image: customer-service #nombre de la imagen que hemos creado
+    image: hugojesusmr/customer-service:1.0 #nombre de la imagen que hemos creado
     restart: always
-    container_name: customer-service:1.0
+    container_name: customer-service
     ports:
       - '8003:8003'
     networks:
       - 'dockermicroservices-network'
   shopping-service:
-    image: shopping-service #nombre de la imagen que hemos creado
+    image: hugojesusmr/shopping-service:1.0 #nombre de la imagen que hemos creado
     restart: always
-    container_name: shopping-service:1.0
+    container_name: shopping-service
     ports:
       - '8004:8004'
     networks:
