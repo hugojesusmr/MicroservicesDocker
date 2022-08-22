@@ -3,7 +3,7 @@ services:
   config-server:
     image: hugojesusmr/config-server:1.0 #nombre de la imagen que hemos creado
     restart: always
-    container_name: registry-service
+    container_name: config-server
     ports:
       - '8001:8001'
     networks:
