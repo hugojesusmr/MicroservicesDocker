@@ -5,6 +5,13 @@
             "name": "Launch ConfigServerApplication",
             "request": "launch",
             "mainClass": "com.example.ConfigServerApplication",
+            "projectName": "ConfigServerApplication"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConfigServerApplication",
+            "request": "launch",
+            "mainClass": "com.example.ConfigServerApplication",
             "projectName": "config-server"
         },
         {
