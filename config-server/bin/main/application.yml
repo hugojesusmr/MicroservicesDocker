@@ -6,21 +6,13 @@ spring:
     config:
       server: 
         git:
-          uri: https://github.com/hugojesusmr/Microservicesk8.git
+          uri: https://github.com/hugojesusmr/MicroservicesDocker.git
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
           default-label: "master"
 
-eureka:
-  instance:
-    preferIpAddress: true
-    hostname: eureka-0
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      default-zone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+
 
           
    

@@ -30,7 +30,6 @@ logging:
 eureka:
   instance:
     preferIpAddress: true
-    hostname: eureka-0
   client:
     serviceUrl:
        default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
