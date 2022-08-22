@@ -1,5 +1,13 @@
 version: '3.8'
 services:
+  config-server:
+    image: hugojesusmr/config-server:1.0 #nombre de la imagen que hemos creado
+    restart: always
+    container_name: registry-service
+    ports:
+      - '8001:8001'
+    networks:
+      - 'dockermicroservices-network'
   registry-service:
     image: hugojesusmr/registry-service:1.0 #nombre de la imagen que hemos creado
     restart: always
