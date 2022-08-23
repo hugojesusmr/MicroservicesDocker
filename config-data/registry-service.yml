@@ -5,6 +5,8 @@ eureka:
     hostname: registry-service
     prefer-ip-address: true
   client:
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
       
