@@ -16,29 +16,6 @@ services:
       - '8761:8761'
     networks:
       - 'dockermicroservices-network'
-  product-service:
-    image: hugojesusmr/product-service:1.0 #nombre de la imagen que hemos creado
-    restart: always
-    container_name: product-service
-    ports:
-      - '8002:8002'
-    networks:
-      - 'dockermicroservices-network'
-  customer-service:
-    image: hugojesusmr/customer-service:1.0 #nombre de la imagen que hemos creado
-    restart: always
-    container_name: customer-service
-    ports:
-      - '8003:8003'
-    networks:
-      - 'dockermicroservices-network'
-  shopping-service:
-    image: hugojesusmr/shopping-service:1.0 #nombre de la imagen que hemos creado
-    restart: always
-    container_name: shopping-service
-    ports:
-      - '8004:8004'
-    networks:
-      - 'dockermicroservices-network'    
+   
 networks:
   dockermicroservices-network:
