@@ -4,6 +4,7 @@ server:
 
 eureka:
   instance:
+    hostname: registry-service
     prefer-ip-address: true
   client:
     registerWithEureka: false
