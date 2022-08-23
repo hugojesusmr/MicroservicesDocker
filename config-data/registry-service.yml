@@ -2,11 +2,55 @@ server:
   port: 8761
 eureka:
   instance:
-    prefer-ip-address: true
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
    
-      
+  server:
+    enable-self-preservation: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: ALWAYS    
+spring:
+  profiles: docker
+  application:
+    name: registry-service
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: registry-service
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+            defaultZone: http://registry-service:8761/eureka/
+  server:
+    enable-self-preservation: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: ALWAYS
