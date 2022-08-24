@@ -2,8 +2,6 @@ server:
   port: 8761
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
       defaultZone: http://registry-service:8761/eureka/
   
