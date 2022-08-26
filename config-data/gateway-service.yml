@@ -1,23 +1,10 @@
-
 server:
   port: 8005 
 
 eureka:
-  instance:
-    preferIpAddress: true
   client:
     serviceUrl:
        default-zone: http://localhost:8761/eureka/
-  
-management:
-  endpoints:
-    web:
-      exposure:
-         include: "*"   
-
-ribbon:
-  eureka:
-    enabled: false
         
 spring:
   cloud:
@@ -26,20 +13,18 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/customers/**
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/api/product/**    
-       
-        - id: order-service
-          uri: lb://order-service
+            - Path=/products/**
+        - id: shopping-service
+          uri: lb://shopping-service
           predicates:
-            - Path=/api/order/**
-            
-        - id: inventory-service
-          uri: lb://inventory-service
-          predicates:
-            - Path=/api/inventory/**
+            - Path=/invoices/**
        
          
                 
