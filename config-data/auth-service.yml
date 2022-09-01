@@ -5,6 +5,8 @@ server:
     include-message: always
     include-binding-errors: always
 spring:
+ application:
+    name: auth-service
   h2:
     console:
       enabled: true
