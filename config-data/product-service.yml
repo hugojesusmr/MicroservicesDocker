@@ -29,6 +29,9 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"  
 eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-server
    client:
       register-with-eureka: true
       fetch-registry: true
